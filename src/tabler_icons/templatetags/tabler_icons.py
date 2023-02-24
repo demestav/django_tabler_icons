@@ -4,7 +4,7 @@ import re
 
 from django import template
 from django.utils.html import mark_safe
-from tabler_icons import icon_directory
+from tabler_icons.utils import read_icon
 
 register = template.Library()
 
@@ -16,13 +16,7 @@ def tabler_icon(icon_name, classes=None, keep_default_classes="yes"):
     elif isinstance(classes, str):
         classes = classes.split(",")
 
-    icon_path = icon_directory / f"{icon_name}.svg"
-
-    if not icon_path:
-        raise ValueError("Icon %s not found" % icon_name)
-
-    with open(icon_path) as f:
-        icon_code = mark_safe(f.read())
+    icon_code = mark_safe(read_icon(icon_name))
 
     class_attribute_regex = re.compile(r'class="(.*?)"')
     match = class_attribute_regex.search(icon_code)

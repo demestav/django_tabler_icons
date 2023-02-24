@@ -10,7 +10,6 @@ def test_dummy():
     )
 
     result = template.render(Context())
-    print(repr(result))
     assert (
         result == '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler'
         ' icon-tabler-123" width="24" height="24" viewBox="0 0 24 24"'
