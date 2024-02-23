@@ -31,7 +31,7 @@ class Command(BaseCommand):
         with urlopen(
             (
                 "https://github.com/tabler/tabler-icons/releases/"
-                "download/v2.4.0/tabler-icons-2.4.0.zip"
+                "download/v2.47.0/tabler-icons-2.47.0.zip"
             ),
         ) as zipresp:
             with ZipFile(io.BytesIO(zipresp.read())) as zfile:
