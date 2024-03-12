@@ -21,7 +21,15 @@ Download the icon set:
 python manage.py download_icons
 ```
 
-Icons will be downloaded to `<user_home_directory>/.config/django-tabler-icons`. You can override this by setting the `TABLER_ICONS_DIR` setting, in project settings.
+Icons will be downloaded to `<user_home_directory>/.config/django-tabler-icons`. You can override this by setting the `TABLER_ICONS_DIR` setting, in project settings. This command requires to load Django.
+
+### Alternative download method
+
+Icons can also be downloaded without loading Django using:
+```bash
+django_tabler_icons download
+```
+which will download the icon set to `<user_home_directory>/.config/django-tabler-icons`. This requires user confirmation to proceed. By passing `--yes` or `-y` as an argument, the confirmation is skipped.
 
 ## Usage
 
