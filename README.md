@@ -1,3 +1,5 @@
+> If you are upgrading from 0.4.0, note that the default download location for icons has changed. Icons are now downloaded to the directory specified by the `XDG_DATA_HOME` environment variable, defaulting to `<user_home_directory>/.local/share/django-tabler-icons/icons` if not set. This change aligns with the XDG Base Directory Specification. If you have `TABLER_ICONS_DIR` set in your Django settings, it will take precedence. The previous default location was `<user_home_directory>/.config/django-tabler-icons/icons`, which you may want to remove if no longer needed.
+
 # Django tabler icons
 Use [the tabler](https://github.com/tabler/tabler-icons) icon set in your Django project.
 
