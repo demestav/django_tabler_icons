@@ -30,7 +30,7 @@ def download_icons(download_diretory):
     download_diretory.mkdir(parents=True, exist_ok=True)
 
     tmp_dir = tempfile.TemporaryDirectory()
-    svg_source_dir = pathlib.Path(tmp_dir.name) / "svg"
+    svg_source_dir = pathlib.Path(tmp_dir.name) / "svg" / "outline"
 
     with urlopen(
         (
