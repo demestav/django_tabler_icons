@@ -35,7 +35,7 @@ def download_icons(download_diretory):
     with urlopen(
         (
             "https://github.com/tabler/tabler-icons/releases/"
-            "download/v3.17.0/tabler-icons-3.17.0.zip"
+            "download/v3.29.0/tabler-icons-3.29.0.zip"
         ),
     ) as zipresp:
         with ZipFile(io.BytesIO(zipresp.read())) as zfile:
