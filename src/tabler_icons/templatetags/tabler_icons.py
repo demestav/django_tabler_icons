@@ -22,18 +22,21 @@ def tabler_icon(icon_name, classes=None, keep_default_classes="yes"):
     match = class_attribute_regex.search(icon_code)
 
     # Set classes
-    if match is None:
+    existing_classes = match.group(1).split(" ") if match else []
+
+    if keep_default_classes == "yes":
+        classes = existing_classes + classes
+
+    class_string = " ".join(classes)
+
+    if match:
         updated_icon_code = class_attribute_regex.sub(
-            'class="%s"' % " ".join(classes),
+            f'class="{class_string}"',
             icon_code,
         )
     else:
-        if keep_default_classes == "yes":
-            classes = match.group(1).split(" ") + classes
-        updated_icon_code = class_attribute_regex.sub(
-            'class="%s"' % " ".join(classes),
-            icon_code,
-        )
+        updated_icon_code = icon_code.replace(">", f' class="{class_string}">', 1)
+
     updated_icon_code = updated_icon_code.strip()
 
     return mark_safe(updated_icon_code)
