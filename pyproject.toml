@@ -2,6 +2,36 @@
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "django_tabler_icons"
+version = "0.6.0"
+authors = [
+  {name = "Demetris Stavrou"}
+]
+description = "Use tabler icons with django templates"
+readme = "README.md"
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only"
+]
+dependencies = [
+  "django>3.0"
+]
+requires-python = ">= 3.7"
+
+[project.scripts]
+django_tabler_icons = "tabler_icons.cli:main"
+
+[project.urls]
+Repository = "https://github.com/demestav/django_tabler_icons"
+
+[dependency-groups]
+test = [
+  "pytest"
+]
+
 [tool.pytest.ini_options]
 addopts = """\
     --strict-config
