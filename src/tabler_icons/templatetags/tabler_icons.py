@@ -4,6 +4,7 @@ import re
 
 from django import template
 from django.utils.html import mark_safe
+
 from tabler_icons.utils import read_icon
 
 register = template.Library()

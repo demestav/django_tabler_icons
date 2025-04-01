@@ -1,8 +1,8 @@
 from __future__ import annotations
-from functools import lru_cache
 
 import os
 import pathlib
+from functools import lru_cache
 
 from django.conf import settings
 

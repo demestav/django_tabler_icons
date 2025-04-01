@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from django.core.management.base import BaseCommand
+
 from tabler_icons import get_icon_directory
 from tabler_icons.utils import download_icons
 
