@@ -31,7 +31,9 @@ scripts.django_tabler_icons = "tabler_icons.cli:main"
 
 [dependency-groups]
 test = [
+  "coverage",
   "pytest",
+  "pytest-django",
 ]
 
 [tool.flake8]
@@ -44,3 +46,14 @@ addopts = """\
     """
 DJANGO_SETTINGS_MODULE = "tests.settings"
 django_find_project = "false"
+
+[tool.coverage.run]
+branch = true
+source = [
+  "tabler_icons",
+]
+
+[tool.coverage.paths]
+source = [
+  "src",
+]
