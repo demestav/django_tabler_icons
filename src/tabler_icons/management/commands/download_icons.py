@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from django.core.management.base import BaseCommand
-from tabler_icons import icon_directory
+from tabler_icons import get_icon_directory
 from tabler_icons.utils import download_icons
 
 
@@ -15,5 +15,7 @@ class Command(BaseCommand):
     help = "Downloads the icon set from the Tabler Icons GitHub repository."
 
     def handle(self, *args, **kwargs):
-        self.stdout.write(self.style.NOTICE("Downloading icons to %s" % icon_directory))
-        download_icons(icon_directory)
+        self.stdout.write(
+            self.style.NOTICE("Downloading icons to %s" % get_icon_directory())
+        )
+        download_icons(get_icon_directory())

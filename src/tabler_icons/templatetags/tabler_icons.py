@@ -11,12 +11,26 @@ register = template.Library()
 
 @register.simple_tag
 def tabler_icon(icon_name, classes=None, keep_default_classes="yes"):
+    return tabler_icon_outline(icon_name, classes, keep_default_classes)
+
+
+@register.simple_tag
+def tabler_icon_outline(icon_name, classes=None, keep_default_classes="yes"):
+    return _load_icon("outline", icon_name, classes, keep_default_classes)
+
+
+@register.simple_tag
+def tabler_icon_filled(icon_name, classes=None, keep_default_classes="yes"):
+    return _load_icon("filled", icon_name, classes, keep_default_classes)
+
+
+def _load_icon(icon_style, icon_name, classes, keep_default_classes):
     if classes is None:
         classes = []
     elif isinstance(classes, str):
         classes = classes.split(",")
 
-    icon_code = mark_safe(read_icon(icon_name))
+    icon_code = mark_safe(read_icon(icon_style, icon_name))
 
     class_attribute_regex = re.compile(r'class="(.*?)"')
     match = class_attribute_regex.search(icon_code)

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import argparse
 
-from tabler_icons import icon_directory
+from tabler_icons import get_icon_directory
 from tabler_icons.utils import download_icons
 
 
@@ -21,10 +21,10 @@ def main():
         exit(0)
 
     if args.command == "download":
-        print(f"Icon set will be downloaded to {icon_directory}")
+        print(f"Icon set will be downloaded to {get_icon_directory()}")
         if not args.yes:
             confirm = input("Do you want to proceed with the installation? [y/N]: ")
             if confirm.lower() != "y":
                 exit(0)
         print("Downloading...")
-        download_icons(icon_directory)
+        download_icons(get_icon_directory())
