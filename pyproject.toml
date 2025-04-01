@@ -11,14 +11,12 @@ readme = "README.md"
 authors = [
   { name = "Demetris Stavrou" },
 ]
-requires-python = ">=3.7"
+requires-python = ">=3.9"
 
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Intended Audience :: Developers",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.7",
-  "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
@@ -26,7 +24,7 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
 ]
 dependencies = [
-  "django>3",
+  "django>4.2",
 ]
 urls.Repository = "https://github.com/demestav/django_tabler_icons"
 scripts.django_tabler_icons = "tabler_icons.cli:main"
