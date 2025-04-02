@@ -5,7 +5,7 @@ requires = [ "setuptools" ]
 
 [project]
 name = "django-tabler-icons"
-version = "0.6.0"
+version = "0.7.0"
 description = "Use tabler icons with django templates"
 readme = "README.md"
 authors = [
